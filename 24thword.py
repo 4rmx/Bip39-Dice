@@ -69,11 +69,13 @@ class Bip39Check(object):
 
 def main():
 
-    # Read dice rolls, find words, and then generate a list of candidate 24th words
-    with open('rolls.txt') as f:
-        fullwordlist = f.read().splitlines()
-    for i in range(len(fullwordlist)):
-        fullwordlist[i].strip()
+    fullwordlist = []
+    counter = 0
+    while counter < 23:
+        print(counter, ":", end=" ")
+        word = input()
+        fullwordlist.append(word)
+        counter = counter + 1
 
     m = Bip39Check('english')
 
